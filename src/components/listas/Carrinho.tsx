@@ -20,16 +20,14 @@ export default function Carrinho(props: CarrinhoProps) {
                     Carrinho
                     <IconShoppingCart />
                 </span>
-                {total === 0 ? (
-                    <span></span>
-                ) : (
-                    <span>{Moeda.formatar(total)}</span>
-                )}
+                {total === 0 
+                ? <span></span> 
+                : <span>{Moeda.formatar(total)}</span>}
             </div>
             <div className="flex flex-wrap gap-5 p-5">
-                {props.itens.length === 0 ? (
-                    <CarrinhoVazio />
-                ) : (
+                {props.itens.length === 0 
+                ? <CarrinhoVazio /> 
+                : (
                     props.itens.map((item, i) => {
                         return <CarrinhoItem key={i} {...item} />
                     })
