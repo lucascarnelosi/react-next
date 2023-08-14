@@ -1,15 +1,15 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 
 export default function useProcessando() {
     const [processando, setProcessando] = useState<boolean>(false)
 
-    function iniciarProcessamento() {
+    const iniciarProcessamento = useCallback(() => {
         setProcessando(true)
-    }
+    }, [])
 
-    function finalizarProcessamento() {
+    const finalizarProcessamento = useCallback(() => {
         setProcessando(false)
-    }
+    }, [])
     
     return {
         processando,
